@@ -31,9 +31,6 @@ public class CameraController : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            lookInput = context.ReadValue<Vector2>();
-        }
+        lookInput = context.ReadValue<Vector2>();
     }
 }
