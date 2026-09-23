@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject gameOverlay;
     [SerializeField] private PlayerInput playerInput;
     private bool isPaused = false;
 
@@ -23,7 +24,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        gameOverlay.SetActive(false);
         pausePanel.SetActive(true);
+        
         Time.timeScale = 0f;
         isPaused = true;
 
@@ -36,6 +39,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        gameOverlay.SetActive(true);
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
