@@ -22,7 +22,6 @@ public class PlayerInteraction : MonoBehaviour
     public void SetPlantingSpot(PlantingSpot plantingSpot)
     {
         currentPlantingSpot = plantingSpot;
-        plantingPrompt.SetActive(true);
     }
 
     public void ClearPlantingSpot(PlantingSpot plantingSpot)
@@ -30,7 +29,17 @@ public class PlayerInteraction : MonoBehaviour
         if (currentPlantingSpot == plantingSpot)
         {
             currentPlantingSpot = null;
-            plantingPrompt.SetActive(false);
+            HidePlantingPrompt();
         }
+    }
+
+    public void HidePlantingPrompt()
+    {
+        plantingPrompt.SetActive(false);
+    }
+
+    public void ShowPlantingPrompt()
+    {
+        plantingPrompt.SetActive(true);
     }
 }
